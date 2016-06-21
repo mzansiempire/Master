@@ -28,7 +28,6 @@
 	   @if(CNF_REGIST =='true') 			
 	   <li><a href="{{ URL::TO('user/register')}}" >  {{ Lang::get('core.signup') }} </a></li>
 	   @endif	
-	   <li ><a href="#tab-reactivate" data-toggle="tab"> {{ Lang::get('core.reactivate') }} </a></li>
 	 
 	</ul>	
 	<div class="tab-content" >

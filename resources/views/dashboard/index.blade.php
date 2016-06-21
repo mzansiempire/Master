@@ -45,6 +45,57 @@
 			</span> <small class="text-muted text-uc">  {{ Lang::get('core.dash_usergroup') }} </small> </a>
 		</div>
 	</div> 
+<div class="panel-group accordion" id="accordion">
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <i class="fa fa-angle-right"></i> <h3> Recent Users <small> ( Last Activity ) </small></h3>
+        </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+
+    <div class="row m-t">
+        <div class="col-md-12">
+            <div class="sbox">
+                <!--div class="sbox-title"> <h3> Recent Users <small> ( Last Activity ) </small> </h3> </div-->
+                <div class="sbox-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="table-responsive" >
+                            <table class="table table-striped">
+                                <tr>
+                                    <th> Email </th>
+                                    <th> Users </th>
+                                    <th> Last Activity </th>
+                                </tr>
+                            @foreach($online_users as $user)
+                                <tr>
+                                    <td> {{ $user->email}} </td>
+                                    <td>{{ $user->first_name}} {{ $user->last_name}}</td>
+                                    <td> {{ date("Y-m-d H:i:s", $user->last_activity) }}</td>
+                                </tr>
+                            @endforeach 
+
+                            </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                        
+                </div>
+
+        </div>
+        
+    </div>
+ </div>       
+    
+    </div>
+</div>
+</div>
 </section>	
 @endif
 
@@ -146,7 +197,6 @@
 
     <!-- END timeline item -->
 
-    ...
 
 
 
