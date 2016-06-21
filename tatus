@@ -1,0 +1,184 @@
+[33mcommit 11fff08a1549ff065d8c248170375c77408d5be1[m
+Author: Mzansi Empire <mail@mzansiempre.co.za>
+Date:   Tue Jun 21 13:36:22 2016 +0200
+
+    Main App
+    
+    Main App Files
+
+[1mdiff --git a/.gitattributes b/.gitattributes[m
+[1mindex bdb0cab..95883de 100644[m
+[1m--- a/.gitattributes[m
+[1m+++ b/.gitattributes[m
+[36m@@ -1,17 +1,3 @@[m
+[31m-# Auto detect text files and perform LF normalization[m
+ * text=auto[m
+[31m-[m
+[31m-# Custom for Visual Studio[m
+[31m-*.cs     diff=csharp[m
+[31m-[m
+[31m-# Standard to msysgit[m
+[31m-*.doc	 diff=astextplain[m
+[31m-*.DOC	 diff=astextplain[m
+[31m-*.docx diff=astextplain[m
+[31m-*.DOCX diff=astextplain[m
+[31m-*.dot  diff=astextplain[m
+[31m-*.DOT  diff=astextplain[m
+[31m-*.pdf  diff=astextplain[m
+[31m-*.PDF	 diff=astextplain[m
+[31m-*.rtf	 diff=astextplain[m
+[31m-*.RTF	 diff=astextplain[m
+[32m+[m[32m*.css linguist-vendored[m
+[32m+[m[32m*.less linguist-vendored[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex cd2946a..c47965c 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1,47 +1,3 @@[m
+[31m-# Windows image file caches[m
+[31m-Thumbs.db[m
+[31m-ehthumbs.db[m
+[31m-[m
+[31m-# Folder config file[m
+[31m-Desktop.ini[m
+[31m-[m
+[31m-# Recycle Bin used on file shares[m
+[31m-$RECYCLE.BIN/[m
+[31m-[m
+[31m-# Windows Installer files[m
+[31m-*.cab[m
+[31m-*.msi[m
+[31m-*.msm[m
+[31m-*.msp[m
+[31m-[m
+[31m-# Windows shortcuts[m
+[31m-*.lnk[m
+[31m-[m
+[31m-# =========================[m
+[31m-# Operating System Files[m
+[31m-# =========================[m
+[31m-[m
+[31m-# OSX[m
+[31m-# =========================[m
+[31m-[m
+[31m-.DS_Store[m
+[31m-.AppleDouble[m
+[31m-.LSOverride[m
+[31m-[m
+[31m-# Thumbnails[m
+[31m-._*[m
+[31m-[m
+[31m-# Files that might appear in the root of a volume[m
+[31m-.DocumentRevisions-V100[m
+[31m-.fseventsd[m
+[31m-.Spotlight-V100[m
+[31m-.TemporaryItems[m
+[31m-.Trashes[m
+[31m-.VolumeIcon.icns[m
+[31m-[m
+[31m-# Directories potentially created on remote AFP share[m
+[31m-.AppleDB[m
+[31m-.AppleDesktop[m
+[31m-Network Trash Folder[m
+[31m-Temporary Items[m
+[31m-.apdisk[m
+[32m+[m[32m/vendor[m
+[32m+[m[32m/node_modules[m
+[32m+[m[32m.env[m
+[1mdiff --git a/bootstrap/.DS_Store b/bootstrap/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..55a1fd2[m
+Binary files /dev/null and b/bootstrap/.DS_Store differ
+[1mdiff --git a/public/sximo/.DS_Store b/public/sximo/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..766e0c2[m
+Binary files /dev/null and b/public/sximo/.DS_Store differ
+[1mdiff --git a/public/sximo/css/.DS_Store b/public/sximo/css/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..328e530[m
+Binary files /dev/null and b/public/sximo/css/.DS_Store differ
+[1mdiff --git a/public/sximo/fonts/.DS_Store b/public/sximo/fonts/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..25df304[m
+Binary files /dev/null and b/public/sximo/fonts/.DS_Store differ
+[1mdiff --git a/public/sximo/fonts/awesome/.DS_Store b/public/sximo/fonts/awesome/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8b4d508[m
+Binary files /dev/null and b/public/sximo/fonts/awesome/.DS_Store differ
+[1mdiff --git a/public/sximo/images/.DS_Store b/public/sximo/images/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5008ddf[m
+Binary files /dev/null and b/public/sximo/images/.DS_Store differ
+[1mdiff --git a/public/sximo/js/.DS_Store b/public/sximo/js/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..008fa61[m
+Binary files /dev/null and b/public/sximo/js/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/.DS_Store b/public/sximo/js/plugins/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5a7725c[m
+Binary files /dev/null and b/public/sximo/js/plugins/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/bootstrap.datetimepicker/.DS_Store b/public/sximo/js/plugins/bootstrap.datetimepicker/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..126fe06[m
+Binary files /dev/null and b/public/sximo/js/plugins/bootstrap.datetimepicker/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/bootstrap/.DS_Store b/public/sximo/js/plugins/bootstrap/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..aaa5880[m
+Binary files /dev/null and b/public/sximo/js/plugins/bootstrap/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/datepicker/.DS_Store b/public/sximo/js/plugins/datepicker/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f5aad91[m
+Binary files /dev/null and b/public/sximo/js/plugins/datepicker/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/datetimepicker/.DS_Store b/public/sximo/js/plugins/datetimepicker/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..95a125f[m
+Binary files /dev/null and b/public/sximo/js/plugins/datetimepicker/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/elfinder/.DS_Store b/public/sximo/js/plugins/elfinder/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d44fbed[m
+Binary files /dev/null and b/public/sximo/js/plugins/elfinder/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/elfinder/files/.DS_Store b/public/sximo/js/plugins/elfinder/files/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7bce60f[m
+Binary files /dev/null and b/public/sximo/js/plugins/elfinder/files/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/elfinder/js/.DS_Store b/public/sximo/js/plugins/elfinder/js/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1d432b8[m
+Binary files /dev/null and b/public/sximo/js/plugins/elfinder/js/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/fancybox/.DS_Store b/public/sximo/js/plugins/fancybox/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f294846[m
+Binary files /dev/null and b/public/sximo/js/plugins/fancybox/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/fullcalendar/.DS_Store b/public/sximo/js/plugins/fullcalendar/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f7371fb[m
+Binary files /dev/null and b/public/sximo/js/plugins/fullcalendar/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/fullcalendar/demos/.DS_Store b/public/sximo/js/plugins/fullcalendar/demos/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..177aa42[m
+Binary files /dev/null and b/public/sximo/js/plugins/fullcalendar/demos/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/fullcalendar/fullcalendar/.DS_Store b/public/sximo/js/plugins/fullcalendar/fullcalendar/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..82c63a1[m
+Binary files /dev/null and b/public/sximo/js/plugins/fullcalendar/fullcalendar/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/fullcalendar/lib/.DS_Store b/public/sximo/js/plugins/fullcalendar/lib/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e2d6b4b[m
+Binary files /dev/null and b/public/sximo/js/plugins/fullcalendar/lib/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/fullcalendar/lib/cupertino/.DS_Store b/public/sximo/js/plugins/fullcalendar/lib/cupertino/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4e5144c[m
+Binary files /dev/null and b/public/sximo/js/plugins/fullcalendar/lib/cupertino/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/iCheck/.DS_Store b/public/sximo/js/plugins/iCheck/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..82cb169[m
+Binary files /dev/null and b/public/sximo/js/plugins/iCheck/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/iCheck/demo/.DS_Store b/public/sximo/js/plugins/iCheck/demo/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0e8ae9a[m
+Binary files /dev/null and b/public/sximo/js/plugins/iCheck/demo/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/iCheck/demo/css/.DS_Store b/public/sximo/js/plugins/iCheck/demo/css/.DS_Store[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cf91cad[m
+Binary files /dev/null and b/public/sximo/js/plugins/iCheck/demo/css/.DS_Store differ
+[1mdiff --git a/public/sximo/js/plugins/iCheck/skins/.DS_Store b/public/sximo/js/plugins/iCheck/skins/.D
