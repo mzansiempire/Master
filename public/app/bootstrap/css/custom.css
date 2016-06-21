@@ -1,0 +1,52 @@
+.checkbox.icheck {
+    padding-left: 1.5em;
+}
+
+.login-box, .register-box {
+    margin: 7% auto;
+    width: 25%;
+    background-color: ghostwhite;
+    padding: 1%;
+}
+
+
+.login-page {
+    background-image: url("../img/bg.jpg");
+}
+
+.login-form-wrapper {
+    background: goldenrod;
+}
+
+.portlet > .portlet-body.blue, .portlet.blue {
+    background-color: #3598dc;
+}
+
+.portlet.box.blue {
+    border: 1px solid #60aee4;
+    border-top: 0;
+}
+
+.portlet {
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding: 0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+.bg-light-blue, .label-primary, .modal-primary .modal-body {
+    background-color: #3c8dbc !important;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+    background: #3c8dbc !important;
+}

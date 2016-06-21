@@ -1,0 +1,155 @@
+<?php $__env->startSection('content'); ?>
+<div class="sbox">
+<div class="sbox-title">
+			
+				<h1 >REGISTER NOW</h1>
+				
+	</div>
+	
+	<div class="sbox-content">
+	<div class="text-center  animated fadeInDown delayp1">
+		<img src="<?php echo e(asset('sximo/images/Mzansi-Empire-Logo.png')); ?>"  />
+	</div>		
+ <?php echo Form::open(array('url'=>'user/create', 'class'=>'form-horizontal form-label-left')); ?>
+
+	    	<?php if(Session::has('message')): ?>
+				<?php echo Session::get('message'); ?>
+
+			<?php endif; ?>
+		<ul class="parsley-error-list">
+			<?php foreach($errors->all() as $error): ?>
+				<li><?php echo e($error); ?></li>
+			<?php endforeach; ?>
+		</ul>
+	
+	<div class="form-group has-feedback">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.username')); ?></label>
+		<div class="col-md-9">
+	   <input type="text" class="form-control" name="username" value="<?php echo e(old('username')); ?>" required data-parsley-minlength="6" maxlength="20"/>
+		</div>
+	</div>
+
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.firstname')); ?>	 </label>
+		<div class="col-md-9">
+	  <?php echo Form::text('firstname', null, array('class'=>'form-control', 'placeholder'=>'First Name' ,'required'=>'' )); ?>
+
+	  </div>
+	</div>
+	
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.lastname')); ?>	 </label>
+		<div class="col-md-9">
+	 <?php echo Form::text('lastname', null, array('class'=>'form-control', 'placeholder'=>'Last Name','required'=>'')); ?>
+
+	 </div>
+	</div>
+	
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.email')); ?>	 </label>
+		<div class="col-md-9">
+	 <?php echo Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Email Address','required'=>'email')); ?>
+
+	 </div>
+	</div>
+	
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.password')); ?>	</label>
+		<div class="col-md-9">
+	 <?php echo Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password','required'=>'')); ?>
+
+	 </div>
+	</div>
+	
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.repassword')); ?>	</label>
+		<div class="col-md-9">
+	 <?php echo Form::password('password_confirmation', array('class'=>'form-control', 'placeholder'=>'Confirm Password','required'=>'')); ?>
+
+	 </div>
+	</div>
+
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.gender')); ?>	</label>
+		<div class="col-md-9">
+		 <select class="form-control" name="gender" value="<?php echo e(Request::old('gender')); ?>" required />
+            <option disabled="selected">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+        </div>
+	</div>
+
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.phone')); ?>	 </label>
+		<div class="col-md-9">
+	 <input type="text" class="form-control" name="phone" value="<?php echo e(old('phone')); ?>" required data-parsley-type="number" data-parsley-minlength="10" maxlength="10" />
+	 </div>
+	</div>
+
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.age')); ?>	 </label>
+		<div class="col-md-9">
+	 <input type="text" class="form-control" name="age" value="<?php echo e(old('age')); ?>" required type="number" data-parsley-range="[18, 100]"/>
+	 </div>
+	</div>
+
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.province')); ?>	 </label>
+			<div class="col-md-9">
+				  <select class="form-control" name="province" value="<?php echo e(Request::old('province')); ?>" required >
+			        <option disabled="selected">Select Province</option>
+			        <option >Eastern Cape</option>
+			        <option >Free State</option>
+			        <option >Gauteng</option>
+			        <option >KwaZulu Natal</option>
+			        <option >Limpopo</option>
+			        <option >Mpumalanga</option>
+			        <option >Northen Cape</option>
+			        <option >North West</option>
+			        <option >Western Cape</option>
+			    </select>
+		 	</div>
+	</div>
+
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo e(Lang::get('core.referrer')); ?>	 </label>
+		<div class="col-md-9">
+	 <input type="email" class="form-control" name="referrer" value="<?php echo e(old('referrer')); ?>" required>
+	 </div>
+	</div>
+
+	<div class="form-group has-feedback ">
+		<label class="control-label col-md-3 col-sm-3 col-xs-12"> </label>
+		<div class="col-md-9">
+	 <input type="checkbox" name="terms" value="terms" required/> I agree to the <a href="#">MzansiEmpire Terms & Conditions </a>
+	 </div>
+	</div>
+
+    <?php if(CNF_RECAPTCHA =='true'): ?> 
+    <div class="form-group has-feedback  animated fadeInLeft delayp1">
+        <label class="text-left"> Are u human ? </label>    
+        <br />
+        <?php echo captcha_img(); ?> <br /><br />
+        <input type="text" name="captcha" placeholder="Type Security Code" class="form-control" required/>
+
+        <div class="clr"></div>
+    </div>
+    <?php endif; ?>						
+
+      <div class="row form-actions">
+        <div class="col-sm-12">
+          <button type="submit" style="width:100%;" class="btn btn-primary pull-right"><i class="icon-user-plus"></i> <?php echo e(Lang::get('core.signup')); ?>	</button>
+       </div>
+      </div>
+	  <p style="padding:10px 0" class="text-center">
+	  <a href="<?php echo e(URL::to('user/login')); ?>"> <?php echo e(Lang::get('core.signin')); ?>  </a> | <a href="<?php echo e(URL::to('')); ?>"> <?php echo e(Lang::get('core.backtosite')); ?>  </a> 
+   		</p>
+ <?php echo Form::close(); ?>
+
+ </div>
+</div> 
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.login', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
